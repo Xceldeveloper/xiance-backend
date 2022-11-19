@@ -1,6 +1,7 @@
 const express = require("express")
+require("dotenv").config()
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 const dbConnection = require("./config")
 const cors = require("cors")
 const authMiddleware = require("./middleware/authMiddleware")
@@ -18,6 +19,6 @@ app.use("/balance", balanceRoute)
 
 dbConnection.startConnection(
   app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`working`)
   })
 )
